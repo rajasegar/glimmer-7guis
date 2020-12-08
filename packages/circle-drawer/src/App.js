@@ -10,9 +10,18 @@ export default class App extends Component {
   @tracked circles = [];
   @tracked selected;
 
-  @action undo() {}
+  @action undo() {
+    this.travel(-1);
+  }
 
-  @action redo() {}
+  @action redo() {
+    this.travel(+1);
+  }
+
+  travel(n) {
+    this.count += n;
+    this.circles = this.undoStack[this.count];
+  }
 
   @action drawCircle(ev) {
     const circle = {
@@ -28,7 +37,8 @@ export default class App extends Component {
   }
 
   push() {
-    const newUndoStack = this.undoStack.slice(0, ++this.count);
+    this.count += 1;
+    const newUndoStack = this.undoStack.slice(0, this.count);
     newUndoStack.push(this.clone(this.circles));
     this.undoStack = newUndoStack;
   }
@@ -37,24 +47,26 @@ export default class App extends Component {
     return this.circles.map(({ cx, cy, r }) => ({ cx, cy, r }));
   }
 
+  get disableUndo() {
+    return this.count === 0;
+  }
+  get disableRedo() {
+    return this.count === this.undoStack.length - 1;
+  }
+
   @action selectCircle() {}
   static template = hbs`
    <div id="intro">
       <img src={{this.logo}}/>
       <h1>Circle Drawer</h1>
       <p>
-        <button type="button" {{on "click" this.undo}}>undo</button>
-        <button type="button" {{on "click" this.redo}}>redo</button>
+        <button type="button" {{on "click" this.undo}} disabled={{this.disableUndo}}>undo</button>
+        <button type="button" {{on "click" this.redo}} disabled={{this.disableRedo}}>redo</button>
       </p>
       <svg {{on "click" this.drawCircle}}>
-      {{#each this.circles as |circle|}}
-        <circle cx={{circle.cx}} cy={{circle.cy}} r={{circle.r}}
-        {{on "click" this.selectCircle}}
-        />
+      {{#each this.circles as |c|}}
+        <circle cx={{c.cx}} cy={{c.cy}} r={{c.r}} ></circle>
       {{/each}}
-      </svg>
-      <svg>
-      <circle cx="100" cy="100" r="50"/>
       </svg>
 
    </div>`;

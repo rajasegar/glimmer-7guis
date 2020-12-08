@@ -1,19 +1,16 @@
 body {
   margin: 0;
   color: #FFFFFF;
+  padding: 1em;
+  background: #1E293B;
 }
 
 #app {
   background: #1E293B;
   min-height: 100vh;
-
-  display: grid;
-  align-items: center;
-  justify-content: center;
 }
 
 #intro {
-  width: 50vw;
 }
 
 #intro h1, #intro h3 {
@@ -25,7 +22,8 @@ body {
 
 svg {
   background-color: #eee;
-  width: 100%;
+  width: 95%;
+  min-height: 800px;
   height: 100%;
 }
 
