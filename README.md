@@ -3,3 +3,9 @@ The [7GUI tasks](https://eugenkiss.github.io/7guis/) using [glimmer.js](https://
 
 ## 7GUIS
 - [Counter](packages/counter)
+- [Temperature Converter](packages/temperature-converter)
+- [Flight Booker](packages/flight-booker)
+- [Timer](packages/timer)
+- [CRUD](packages/crud)
+- [Circle Drawer]()
+- [Cells]()
