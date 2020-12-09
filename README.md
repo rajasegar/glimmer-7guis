@@ -8,4 +8,4 @@ The [7GUI tasks](https://eugenkiss.github.io/7guis/) using [glimmer.js](https://
 - [Timer](packages/timer)
 - [CRUD](packages/crud)
 - [Circle Drawer](packages/circle-drawer)
-- [Cells]()
+- [Cells](packages/cells)
