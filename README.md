@@ -7,5 +7,5 @@ The [7GUI tasks](https://eugenkiss.github.io/7guis/) using [glimmer.js](https://
 - [Flight Booker](packages/flight-booker)
 - [Timer](packages/timer)
 - [CRUD](packages/crud)
-- [Circle Drawer]()
+- [Circle Drawer](packages/circle-drawer)
 - [Cells]()

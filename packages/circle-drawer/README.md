@@ -1,7 +1,4 @@
-# snowpack-app-template-glimmer
-
-[![npm version](http://img.shields.io/npm/v/snowpack-app-template-glimmer.svg?style=flat)](https://npmjs.org/package/snowpack-app-template-glimmer "View this project on npm")
-
+# Circle Drawer
 
 > ✨ Bootstrapped with Create Snowpack App (CSA).
 
