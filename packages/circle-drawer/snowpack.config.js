@@ -21,13 +21,12 @@ module.exports = {
   ],
   install: ['@glimmer/core'],
   installOptions: {
-    /* ... */
   },
   devOptions: {
     /* ... */
   },
   buildOptions: {
-    /* ... */
+    clean: true
   },
   proxy: {
     /* ... */

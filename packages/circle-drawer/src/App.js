@@ -27,7 +27,7 @@ export default class App extends Component {
     const circle = {
       cx: ev.clientX,
       cy: ev.clientY,
-      r: 50,
+      r: 50
     };
 
     this.circles = this.circles.concat(circle);
@@ -54,20 +54,24 @@ export default class App extends Component {
     return this.count === this.undoStack.length - 1;
   }
 
-  @action selectCircle() {}
+  @action selectCircle(ev) {
+    ev.stopPropagation();
+    document.querySelectorAll('circle').forEach(c => c.setAttribute('fill', 'white'));
+    ev.target.setAttribute('fill', '#ccc');
+  }
+
   static template = hbs`
-   <div id="intro">
-      <img src={{this.logo}}/>
-      <h1>Circle Drawer</h1>
-      <p>
+      <div class="controls">
+        <h1>Circle Drawer</h1>
         <button type="button" {{on "click" this.undo}} disabled={{this.disableUndo}}>undo</button>
         <button type="button" {{on "click" this.redo}} disabled={{this.disableRedo}}>redo</button>
-      </p>
+      </div>
       <svg {{on "click" this.drawCircle}}>
       {{#each this.circles as |c|}}
-        <circle cx={{c.cx}} cy={{c.cy}} r={{c.r}} ></circle>
+        <circle cx={{c.cx}} cy={{c.cy}} r={{c.r}} 
+        data-circle={{c}}
+        fill="white"
+        {{on "click" this.selectCircle}}></circle>
       {{/each}}
-      </svg>
-
-   </div>`;
+      </svg>`;
 }
