@@ -1,0 +1,26 @@
+body {
+  margin: 0;
+}
+
+
+nav {
+  width: 100%;
+  background: #1E293B;
+}
+
+li {
+  list-style: none;
+}
+
+nav ul {
+  display: flex;
+  align-items: space-between;
+}
+
+a {
+  color: white;
+  display: block;
+  padding: 1em;
+}
+
+
