@@ -83,3 +83,10 @@ circle {
   margin: 2em;
 }
 
+
+footer {
+  position: fixed;
+  bottom: 1em;
+  text-align: center;
+  width: 100%;
+}

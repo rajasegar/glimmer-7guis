@@ -47,5 +47,9 @@ export default class App extends Component {
         <Route @path="/crud" @component={{this.CRUD}}/>
         <Route @path="/circle-drawer" @component={{this.CircleDrawer}}/>
         <Route @path="/cells" @component={{this.Cells}}/>
-   </main>`;
+   </main>
+   <footer>
+   <a href="https://github.com/rajasegar/glimmer-7guis">Github</a>
+   </footer>
+    `;
 }
