@@ -1,0 +1,9 @@
+.cell {
+  margin: 0;
+  max-width: 100px;
+}
+
+/*tbody tr::before {*/
+  /*content: "x";*/
+  /*position: absolute;*/
+/*}*/

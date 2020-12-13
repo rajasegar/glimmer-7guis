@@ -9,7 +9,7 @@ import FlightBooker from "./pages/FlightBooker.js";
 import Timer from "./pages/Timer.js";
 import CRUD from "./pages/CRUD.js";
 import CircleDrawer from "./pages/CircleDrawer.js";
-import Cells from "./pages/Cells.js";
+import Cells from "./pages/Cells/index.js";
 
 import "./App.css";
 

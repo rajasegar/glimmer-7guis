@@ -1,5 +1,7 @@
 import Component, { hbs, tracked } from "@glimmerx/component";
 
+
+
 export default class Cells extends Component {
   @tracked cols = ["A", "B", "C", "D", "E"];
   @tracked rows = new Array(10);
