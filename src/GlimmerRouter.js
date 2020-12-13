@@ -28,6 +28,7 @@ export class Router extends Component {
     window.routerRegistry = [];
     document.addEventListener("click", this.route.bind(this));
     window.addEventListener("popstate", this.handlePopState.bind(this));
+    document.addEventListener("DOMContentLoaded", this.start.bind(this));
   }
 
   renderPage(component) {
@@ -60,9 +61,20 @@ export class Router extends Component {
     window.removeEventListener("popstate", this.handlePopState);
   }
 
+  navigate(path) {
+    const [route] = this.registry.filter((r) => r.path === path);
+    if (route) {
+      this.renderPage(route.component);
+    }
+  }
+
+  start(ev) {
+    const path = location.pathname || "/";
+    this.navigate(path);
+  }
+
   static template = hbs`
-   <div>
       {{yield}}
       <div id="glimmer-router-outlet"></div>
-   </div>`;
+   `;
 }

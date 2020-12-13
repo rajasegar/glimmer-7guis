@@ -22,8 +22,8 @@ export default class CircleDrawer extends Component {
 
   @action drawCircle(ev) {
     const circle = {
-      cx: ev.clientX,
-      cy: ev.clientY,
+      cx: ev.clientX - 16, // deduct the padding of main
+      cy: ev.clientY - 66, // deduct the height of navbar
       r: 50,
     };
 

@@ -2,6 +2,7 @@ import Component, { hbs, tracked } from "@glimmerx/component";
 import { on, action } from "@glimmerx/modifier";
 import { Router, Route, Link } from "./GlimmerRouter.js";
 
+import Home from "./pages/Home.js";
 import Counter from "./pages/Counter.js";
 import TemperatureConverter from "./pages/TemperatureConverter.js";
 import FlightBooker from "./pages/FlightBooker.js";
@@ -13,6 +14,7 @@ import Cells from "./pages/Cells.js";
 import "./App.css";
 
 export default class App extends Component {
+  Home = Home;
   Counter = Counter;
   TemperatureConverter = TemperatureConverter;
   FlightBooker = FlightBooker;
@@ -22,10 +24,9 @@ export default class App extends Component {
   Cells = Cells;
 
   static template = hbs`
-   <div id="intro">
-   <Router>
         <nav>
           <ul>
+            <li><Link @to="/">Home</Link></li>
             <li><Link @to="/counter">Counter</Link></li>
             <li><Link @to="/temperature-converter">Temperature Converter</Link></li>
             <li><Link @to="/flight-booker">Flight Booker</Link></li>
@@ -35,7 +36,10 @@ export default class App extends Component {
             <li><Link @to="/cells">Cells</Link></li>
           </ul>
         </nav>
-        <h1>7GUIs - GlimmerX</h1>
+
+   <main>
+      <Router></Router>
+        <Route @path="/" @component={{this.Home}}/>
         <Route @path="/counter" @component={{this.Counter}}/>
         <Route @path="/temperature-converter" @component={{this.TemperatureConverter}}/>
         <Route @path="/flight-booker" @component={{this.FlightBooker}}/>
@@ -43,6 +47,5 @@ export default class App extends Component {
         <Route @path="/crud" @component={{this.CRUD}}/>
         <Route @path="/circle-drawer" @component={{this.CircleDrawer}}/>
         <Route @path="/cells" @component={{this.Cells}}/>
-      </Router>
-   </div>`;
+   </main>`;
 }

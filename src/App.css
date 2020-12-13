@@ -1,5 +1,14 @@
-body {
+:root {
+  --blue: #1e293b;
+}
+
+* {
   margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family:sans-serif;
 }
 
 
@@ -17,10 +26,60 @@ nav ul {
   align-items: space-between;
 }
 
-a {
+nav a {
   color: white;
   display: block;
   padding: 1em;
+  text-decoration: none;
 }
 
+main {
+  padding: 1em;
+  
+}
+
+input, select, button {
+  padding: 0.5em;
+  margin: 0.5em;
+}
+
+select {
+  min-width: 165px;
+}
+svg {
+  background-color: #eee;
+  width: 100%;
+  height: 99vh;
+}
+
+button {
+background: var(--blue);
+color: white;
+border: none;
+border-radius: 0.2em;
+}
+
+button[disabled] {
+  background: #ccc;
+}
+.controls {
+  position: absolute;
+  text-align:center;
+  width: 100%;
+}
+
+circle {
+  stroke: black;
+}
+
+.home-page {
+  width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.home-page p {
+  text-align:left;
+  margin: 2em;
+}
 
