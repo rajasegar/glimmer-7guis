@@ -16,7 +16,7 @@ export default class TemperatureConverter extends Component {
   }
 
   static template = hbs`
-   <div id="intro">
+   <div class="page-wrapper">
       <h1>Temperature Converter</h1>
       <p>
         <input type="number" value={{this.celcius}} {{on "input" this.setBothFromC}}/>

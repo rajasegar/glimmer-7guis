@@ -90,3 +90,9 @@ footer {
   text-align: center;
   width: 100%;
 }
+
+.page-wrapper {
+  width: 800px;
+  margin: 0 auto;
+  text-align:center;
+}

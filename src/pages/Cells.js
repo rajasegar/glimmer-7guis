@@ -9,7 +9,7 @@ export default class Cells extends Component {
   }
 
   static template = hbs`
-   <div id="intro">
+   <div class="page-wrapper">
       <h1>Cells</h1>
       <table>
       <thead>

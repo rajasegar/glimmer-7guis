@@ -43,7 +43,7 @@ export default class CRUD extends Component {
   }
 
   static template = hbs`
-   <div id="intro">
+   <div class="page-wrapper">
       <h1>GlimmerX - CRUD!</h1>
       <p><input type="text" {{on "input" this.updateQuery }}/></p>
       <p>

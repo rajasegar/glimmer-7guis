@@ -38,7 +38,7 @@ export default class App extends Component {
         </nav>
 
    <main>
-      <Router></Router>
+      <Router>
         <Route @path="/" @component={{this.Home}}/>
         <Route @path="/counter" @component={{this.Counter}}/>
         <Route @path="/temperature-converter" @component={{this.TemperatureConverter}}/>
@@ -47,6 +47,7 @@ export default class App extends Component {
         <Route @path="/crud" @component={{this.CRUD}}/>
         <Route @path="/circle-drawer" @component={{this.CircleDrawer}}/>
         <Route @path="/cells" @component={{this.Cells}}/>
+</Router>
    </main>
    <footer>
    <a href="https://github.com/rajasegar/glimmer-7guis">Github</a>

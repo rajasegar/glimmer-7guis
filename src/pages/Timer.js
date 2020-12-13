@@ -46,7 +46,7 @@ export default class Timer extends Component {
   }
 
   static template = hbs`
-   <div id="intro">
+   <div class="page-wrapper">
       <h1>Timer</h1>
       <p>
       Elapsed Time:

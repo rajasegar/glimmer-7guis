@@ -33,7 +33,7 @@ export default class FlightBooker extends Component {
   }
 
   static template = hbs`
-   <div id="intro">
+   <div class="page-wrapper">
       <h1>Flight Booker</h1>
       <p>
         <select {{on "change" this.updateFlight}}>

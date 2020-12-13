@@ -9,7 +9,7 @@ export default class Counter extends Component {
   }
 
   static template = hbs`
-   <div>
+   <div class="page-wrapper">
    <h2>Counter</h2>
    <p><input type="text" value={{this.count}}/></p>
    <p><button type="button" {{on "click" this.increment}}>Count</button></p>
