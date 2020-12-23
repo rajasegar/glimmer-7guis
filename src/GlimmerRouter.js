@@ -33,8 +33,13 @@ export class Router extends Component {
 
   renderPage(component) {
     const outlet = document.getElementById("glimmer-router-outlet");
-    outlet.innerHTML = "";
-    renderComponent(component, outlet);
+    outlet.innerHTML = "<h1>Loading page...</h1>";
+
+    import(`./pages/${component}.js`).then(component => {
+      outlet.innerHTML = "";
+      renderComponent(component.default, outlet);
+    });
+
   }
 
   route(ev) {

@@ -8,13 +8,25 @@ module.exports = {
     [
       '@snowpack/plugin-babel',
       {
-        input: ['.js', '.mjs', '.jsx', '.ts', '.tsx'],
+        input: ['.js'],
         transformOptions: {
           plugins: [
             '@glimmerx/babel-plugin-component-templates',
             ['@babel/plugin-proposal-decorators', { legacy: true }],
             '@babel/plugin-proposal-class-properties',
           ],
+        },
+      },
+    ],
+    [
+      'snowpack-plugin-terser',
+      {
+        terserOptions: {
+          compress: {
+            arguments: true,
+            passes: 2,
+            unsafe_arrows: true,
+          },
         },
       },
     ],
@@ -27,7 +39,6 @@ module.exports = {
     /* ... */
   },
   buildOptions: {
-    /* ... */
   },
   proxy: {
     /* ... */

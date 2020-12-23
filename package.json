@@ -21,6 +21,8 @@
     "@snowpack/plugin-babel": "^2.1.4",
     "prettier": "^2.0.5",
     "snowpack": "^2.17.1",
-    "surge": "^0.21.7"
+    "snowpack-plugin-terser": "^0.1.0",
+    "surge": "^0.21.7",
+    "terser": "^5.5.1"
   }
 }
