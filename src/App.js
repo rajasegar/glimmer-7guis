@@ -5,7 +5,6 @@ import { Router, Route, Link } from "./GlimmerRouter.js";
 import "./App.css";
 
 export default class App extends Component {
-
   static template = hbs`
         <nav>
           <ul>
